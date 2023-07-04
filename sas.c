@@ -1,120 +1,56 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "student.h"
+#include <stdio.h>        // Include the standard input/output library for input/output operations.
+#include <stdlib.h>       // Include the standard library for memory allocation and other functions.
+#include "student.h"      // Include a header file "student.h" that contains function declarations.
 
-void addStudent(Student* students[], int* count) {
-    if (*count >= MAX_STUDENTS) {           // Check if maximum limit of students has been reached
-        printf("Maximum limit of students reached.\n");
-        return;
-    }
+int main() {              // The entry point of the program.
+    Student* students[MAX_STUDENTS];   // Array of pointers to Student structures.
+    int count = 0;         // Variable to keep track of the number of students.
+    int choice;            // Variable to store the user's menu choice.
 
-    Student* newStudent = (Student*)malloc(sizeof(Student));   // Allocate memory for a new student
-
-    printf("Enter name: ");
-    scanf(" %[^\n]s", newStudent->name);    // Read name of the student
-    
-
-    printf("Enter surname: ");
-    scanf(" %[^\n]s", newStudent->surname); // Read surname of the student
-
-    printf("Enter father's name: ");
-    scanf(" %[^\n]s", newStudent->fathersName); // Read father's name of the student
-
-    printf("Enter mother's name: ");
-    scanf(" %[^\n]s", newStudent->mothersName); // Read mother's name of the student
-
-    printf("Enter email: ");
-    scanf(" %[^\n]s", newStudent->email);   // Read email of the student
-
-    printf("Enter phone number: ");
-    scanf(" %[^\n]s", newStudent->phone);   // Read phone number of the student
-
-    printf("Enter address: ");
-    scanf(" %[^\n]s", newStudent->address); // Read address of the student
-
-    printf("Enter course: ");
-    scanf(" %[^\n]s", newStudent->course);  // Read course of the student
-
-    newStudent->id = *count + 1;            // Assign a unique ID to the new student
-
-    students[*count] = newStudent;          // Add the new student to the students array
-    (*count)++;                             // Increment the count of students
-
-    printf("Student added successfully. ID assigned: %d\n", newStudent->id);  // Print the assigned ID
-}
-
-void displayStudents(Student* students[], int count) {
-    printf("ID\tName\t\tSurname\t\tFather's Name\tMother's Name\tEmail\t\t\tPhone Number\tAddress\t\t\t\tCourse\n");
-    printf("=====================================================================================================================\n");
-
-    for (int i = 0; i < count; i++) {
-        printf("%d\t%s\t%s\t%s\t\t%s\t\t%s\t\t%s\t%s\t\t%s\n",
-            students[i]->id, students[i]->name, students[i]->surname, students[i]->fathersName,
-            students[i]->mothersName, students[i]->email, students[i]->phone,
-            students[i]->address, students[i]->course);  // Print the details of each student
-    }
-}
-void searchStudent(Student* students[], int count) {
-    int searchId;
-    printf("Enter the ID of the student you want to search: ");
-    scanf("%d", &searchId);         // Read the ID of the student to search
-
-    for (int i = 0; i < count; i++) {
-        if (students[i]->id == searchId) {     // Check if the current student's ID matches the search ID
-            printf("ID\tName\t\tSurname\t\tFather's Name\tMother's Name\tEmail\t\t\tPhone Number\tAddress\t\t\t\tCourse\n");
-            printf("=====================================================================================================================\n");
-            printf("%d\t%s\t%s\t%s\t\t%s\t\t%s\t\t%s\t%s\t\t%s\n",
-                students[i]->id, students[i]->name, students[i]->surname, students[i]->fathersName,
-                students[i]->mothersName, students[i]->email, students[i]->phone,
-                students[i]->address, students[i]->course);   // Print the details of the found student
-            return;
-        }
-    }
-
-    printf("Student with ID %d not found.\n", searchId);   // Print a message if the student is not found
-}
-
-void freeMemory(Student* students[], int count) {
-    for (int i = 0; i < count; i++) {
-        free(students[i]);     // Free the memory allocated for each student structure
-    }
-}
-int main() {
-    Student* students[MAX_STUDENTS];    // Array to store pointers to Student structures
-    int count = 0;                      // Number of students currently stored
-    int choice;                         // User's choice
-
-    do {
-        printf("\nStudent Admission System\n");
+    do {                   // Start a loop that will repeat until the user chooses to exit.
+        printf("\nStudent Admission System\n");  // Display the menu options.
         printf("========================\n");
         printf("1. New Student Registration\n");
         printf("2. Display All Students\n");
         printf("3. Search Student by ID\n");
-        printf("4. Exit\n");
+        printf("4. Delete Student by ID\n");
+        printf("5. Exit\n");
         printf("Enter your choice: ");
-        scanf("%d", &choice);            // Read user's choice
+        scanf("%d", &choice);  // Read the user's choice.
 
-        switch (choice) {
-            case 1:
-                addStudent(students, &count);    // Call the function to add a new student
-                break;
-            case 2:
-                displayStudents(students, count);    // Call the function to display all students
-                break;
-            case 3:
-                searchStudent(students, count);      // Call the function to search for a student by ID
-                break;
-            case 4:
-                freeMemory(students, count);         // Call the function to free memory and exit the program
+        switch (choice) {      // Use a switch statement to perform different actions based on the user's choice.
+            case 1: {          // If the choice is 1, execute the code inside this block.
+                addStudent(students, &count);  // Call the addStudent function to register a new student.
+                break;           // Break out of the switch statement.
+            }
+            case 2: {          // If the choice is 2, execute the code inside this block.
+                displayStudents(students, count);  // Call the displayStudents function to show all registered students.
+                break;           // Break out of the switch statement.
+            }
+            case 3: {          // If the choice is 3, execute the code inside this block.
+                int searchId;   // Variable to store the ID of the student to be searched.
+                printf("Enter the ID of the student you want to search: ");
+                scanf("%d", &searchId);  // Read the ID from the user.
+                searchStudent(students, count, searchId);  // Call the searchStudent function to find the student by ID.
+                break;           // Break out of the switch statement.
+            }
+            case 4: {          // If the choice is 4, execute the code inside this block.
+                int deleteId;   // Variable to store the ID of the student to be deleted.
+                printf("Enter the ID of the student you want to delete: ");
+                scanf("%d", &deleteId);  // Read the ID from the user.
+                deleteStudent(students, &count, deleteId);  // Call the deleteStudent function to remove the student by ID.
+                break;           // Break out of the switch statement.
+            }
+            case 5: {          // If the choice is 5, execute the code inside this block.
+                freeMemory(students, count);  // Call the freeMemory function to release memory allocated for students.
                 printf("Exiting the program.\n");
-                break;
-            default:
-                printf("Invalid choice. Please try again.\n");    // Print an error message for an invalid choice
+                break;           // Break out of the switch statement.
+            }
+            default:            // If the choice is none of the above, execute the code inside this block.
+                printf("Invalid choice. Please try again.\n");
         }
-    } while (choice != 4);    // Repeat the loop until the user chooses to exit
+    } while (choice != 5);   // Repeat the loop until the choice is 5 (exit).
 
-    return 0;    // Return 0 to indicate successful program execution
+    return 0;               // Return 0 to indicate successful program execution.
 }
-
 
