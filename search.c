@@ -1,3 +1,7 @@
+/*The function "searchStudent" searches for a student with a specific ID in an array of students. 
+It iterates over each student, comparing their ID with the search ID. 
+If a match is found, it prints the student's information. If no matching student is found, it displays a message indicating that. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
