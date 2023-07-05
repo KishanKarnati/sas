@@ -1,3 +1,9 @@
+/*The main function serves as the entry point for the Student Record System program. 
+It provides a  interface for the user to perform various operations, 
+such as adding a student, displaying student's information, searching for a student, deleting a student, saving student data to a file, and exiting the program.
+The program uses an array to store pointers to Student objects and keeps track of the number of students using the count variable. */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
