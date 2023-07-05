@@ -1,3 +1,7 @@
+/*The function "deleteStudent" deletes a student with a specific ID from an array of students. 
+It searches for the student with the matching ID, frees the memory allocated for that student.
+The function "freeMemory" frees the memory allocated for all students in the array */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
