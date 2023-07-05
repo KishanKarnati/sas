@@ -1,3 +1,12 @@
+/* The given code defines four functions for validating different aspects of student information 
+validateName: Checks if the given name is valid by iterating over each character and ensuring that it does not contain digits or punctuation marks. 
+
+validateEmail: Validates the format of the email by checking if it contains an "@" symbol and a "." symbol in the correct order. 
+
+validateCourse: Validates the course name by checking if it contains only alphabetic characters and matches one of the predefined valid courses. 
+
+validatePhoneNumber: Validates the format of the phone number by checking if it consists of exactly 10 digits. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
