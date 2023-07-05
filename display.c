@@ -3,10 +3,7 @@ It checks if there are any students to display and then iterates over each stude
 prints their ID, name, email, course, and phone number. */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+
 #include "student.h"
 
 // Function to display the information of all students
