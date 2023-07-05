@@ -2,10 +2,7 @@
 It prompts the user to enter the student's name, email, course, and phone number, validating each input. 
 It checks if the email and phone number already exist in the array before adding the new student. */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+
 #include "student.h"
 
 void addStudent(Student* students[], int* count) {
