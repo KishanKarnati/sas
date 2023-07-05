@@ -3,10 +3,6 @@
 The function "loadStudentsFromFile" reads student data from a file named "students.txt" */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 #include "student.h"
 
 // Function to save the student data to a file
