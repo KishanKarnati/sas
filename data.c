@@ -1,3 +1,8 @@
+/*The function "saveStudentsToFile" saves the student data from an array of students to a file named "students.txt".
+
+The function "loadStudentsFromFile" reads student data from a file named "students.txt" */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
