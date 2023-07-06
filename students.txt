@@ -1,0 +1,4 @@
+/*The students.txt file is referenced in the code and serves as a storage file for student data. 
+It is used to store and retrieve student information in a structured format.
+The file is created and accessed during the program's execution
+allowing data to persist between program runs and enabling data retrieval for future use.*/
