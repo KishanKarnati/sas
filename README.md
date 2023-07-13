@@ -9,9 +9,11 @@ If you need to remove a student from the record, you can easily delete them by e
 The system allows you to save all the student records to a file for future use. 
 It's an easy-to-use tool for managing student information effectively.  
 
-Progress in the system
+Progress in the system                                            
 01-07-2023 Created Student Admission System with Basic Features like registration, displaying students data and deleting student data     
 05-07-2023 Added File Handling Functions to store students data                                                      
 10-07-2023 Extended functionalities like Modifying Student Data, Sorting Students Data by Name and Filtering Students by Course
+
+Currently working on implementing a user authentication system to restrict access to the student record system, so that only authorized individuals can add, modify, or view student information.
 
 
