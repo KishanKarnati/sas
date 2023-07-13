@@ -13,7 +13,7 @@ The program uses an array to store pointers to Student objects and keeps track o
 #include <ctype.h> //This header file provides functions for testing and manipulating characters, such as isalpha and tolower.
 #include "student.h" // Including the header file for student-related functions and structures
 
-int main() {
+int main() { // Entry point of the program
     Student* students[MAX_STUDENTS]; // Array of student pointers
     int count = 0; // Variable to keep track of the number of students
 
