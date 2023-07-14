@@ -20,7 +20,6 @@ int main() { // Entry point of the program
     int searchId, deleteId; // Variables for searching and deleting students
     char filterCourse[MAX_COURSE_LENGTH]; // Variable to store a course for filtering
     char email[MAX_EMAIL_LENGTH]; // Variable to store an email address
-    char applicationStatus[MAX_STATUS_LENGTH]; // Variable to store an application status
 
     do {
         printf("\n--- Student Admission System ---\n");
