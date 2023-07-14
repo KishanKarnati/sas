@@ -14,6 +14,6 @@ Progress in the system
 05-07-2023 Added File Handling Functions to store students data                                                      
 10-07-2023 Extended functionalities like Modifying Student Data, Sorting Students Data by Name and Filtering Students by Course
 
-Currently working on implementing a user authentication system to restrict access to the student record system, so that only authorized individuals can add, modify, or view student information.
+Currently working on implementing a user authentication system to restrict access to the student record system, so that only authorized individuals can add, modify, or view student information and restore and backup function in case of data loss.
 
 
